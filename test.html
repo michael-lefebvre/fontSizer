@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+
+h3 {
+  font-size: 14px;
+}
+.main {
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+p {
+  font-size: 1.4em
+}
+
+p small {
+  font-size: 1em;
+}
+  </style>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script>
+
+  var $body
+    , $window
+    , fontsize = 12
+    , preferredHeight = 768 //Standard height, for which the body font size is correct
+
+  var resize = function()
+  {
+    var newFontSize = Math.floor( ( $window.height() / preferredHeight ) * 100) + '%'
+
+    $body.css('font-size', newFontSize)
+  }
+
+  $(function()
+  {
+    $body   = $('body')
+    $window = $(window)
+    $main   = $('.main') 
+
+    $window.resize(resize).trigger('resize')
+  })
+  </script>
+</head>
+<body>
+  <h3>Taille qui ne bouge pas</h3>
+  <div class="main">
+    <h1>Title</h1>
+    <h2>Sub title</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius mauris blandit diam volutpat fringilla. Integer vitae leo vel lacus malesuada hendrerit. Duis non molestie mi. Mauris eget sapien nulla. Proin quis neque fermentum, malesuada nulla et, aliquam turpis. Maecenas non ultricies felis, in accumsan felis. Nam ut lobortis enim. Nunc quis orci sed odio viverra tincidunt. Nam porttitor bibendum massa, eu posuere ligula venenatis ac. Aenean ut posuere erat. Ut venenatis tristique est vitae dapibus. Vestibulum laoreet magna quis tellus eleifend, sit amet molestie dui molestie. Quisque consectetur erat augue, a cursus purus tempus ac. Aenean adipiscing sit amet tellus vel vulputate. Sed nibh erat, sodales at erat vitae, pellentesque porttitor ipsum. Suspendisse potenti.</p>
+
+    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus id convallis metus. Vivamus porttitor tellus sit amet quam mollis faucibus. Donec viverra eleifend nisl ut tempus. Quisque commodo tincidunt urna at luctus. Maecenas ut sapien nisi. Nunc lobortis metus a quam sodales vulputate. Donec non laoreet ipsum. Nunc justo elit, scelerisque eget velit non, faucibus ultrices nisi.</p>
+
+    <p><small>footer note</small></p>
+  </div>
+</body>
+</html>
