@@ -56,7 +56,7 @@ function fontSizer( container, options )
     }
     else 
     {
-        window[ 'on resize' ] = eventHandle
+        window[ 'onresize' ] = eventHandle
     }
   }
 
